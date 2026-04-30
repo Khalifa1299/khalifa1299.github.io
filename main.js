@@ -706,7 +706,46 @@ function initGlitch() {
 }
 
 // ============================================================
-// 12. KONAMI CODE + MATRIX RAIN
+// 12. STAT COUNTERS
+// ============================================================
+
+function initCounters() {
+  const counters = document.querySelectorAll('.stat-number[data-target]');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+
+      const card = entry.target.closest('.stat');
+      if (card) card.classList.add('counted');
+
+      const target = parseInt(entry.target.dataset.target, 10);
+      const duration = 1400;
+      const start = performance.now();
+
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        entry.target.textContent = current;
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          entry.target.textContent = target + '+';
+        }
+      }
+      requestAnimationFrame(update);
+    });
+  }, { threshold: 0.6 });
+
+  counters.forEach(el => observer.observe(el));
+}
+
+// ============================================================
+// 13. KONAMI CODE + MATRIX RAIN (kept authentic Matrix green)
 // ============================================================
 
 function initKonami() {
@@ -796,7 +835,7 @@ function initKonami() {
 }
 
 // ============================================================
-// 13. EASTER EGGS
+// 14. EASTER EGGS
 // ============================================================
 
 function initEasterEggs() {
@@ -849,11 +888,10 @@ function initEasterEggs() {
 }
 
 // ============================================================
-// 14. BOOT
+// 15. BOOT
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  initHeroCanvas();
   initTypewriter();
   initAboutTerminal();
   initSkills();
@@ -861,6 +899,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCerts();
   initNav();
   initScrollReveal();
+  initCounters();
   initCursor();
   initKonami();
   initEasterEggs();

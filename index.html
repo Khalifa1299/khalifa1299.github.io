@@ -14,7 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,15 +37,7 @@
   <!-- Navigation -->
   <nav id="nav" role="navigation" aria-label="Main navigation">
     <a href="#hero" class="nav-logo" aria-label="Ahmed Khalifa — home">
-      <svg class="logo-hex" width="36" height="36" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <polygon points="80,6 146,43 146,117 80,154 14,117 14,43" fill="none" stroke="#5fa8f5" stroke-width="3" opacity="0.75"/>
-        <polygon points="80,20 132,50 132,110 80,140 28,110 28,50" fill="#030f1f" stroke="#1a4a7a" stroke-width="1.5"/>
-        <line x1="80" y1="20" x2="80" y2="50" stroke="#1a4a7a" stroke-width="1" opacity="0.6"/>
-        <line x1="80" y1="110" x2="80" y2="140" stroke="#1a4a7a" stroke-width="1" opacity="0.6"/>
-        <text x="74" y="80" text-anchor="middle" dominant-baseline="central" font-family="Cinzel, serif" font-weight="900" font-size="44" fill="#5fa8f5">A</text>
-        <text x="106" y="80" text-anchor="middle" dominant-baseline="central" font-family="Cinzel, serif" font-weight="900" font-size="44" fill="#ffffff">K</text>
-      </svg>
-      <span class="blink" aria-hidden="true">_</span>
+      <img src="assets/logo.png" class="logo-img" alt="AK logo" aria-hidden="true">
     </a>
     <ul class="nav-links" id="nav-links" role="list">
       <li><a href="#about">about</a></li>
@@ -64,21 +57,57 @@
 
     <!-- ==================== HERO ==================== -->
     <section id="hero" aria-label="Introduction">
-      <canvas id="hero-canvas" aria-hidden="true"></canvas>
       <div class="hero-content">
-        <p class="hero-eyebrow">// available for opportunities</p>
-        <h1 class="hero-name" data-text="Ahmed Khalifa">Ahmed Khalifa</h1>
-        <div class="hero-role" aria-live="polite">
-          <span class="typewriter-prefix" aria-hidden="true">$ whoami &nbsp;&#8594;&nbsp; </span><span id="typewriter"></span><span class="cursor-blink" aria-hidden="true">|</span>
+
+        <!-- Left: text -->
+        <div class="hero-left">
+          <p class="hero-eyebrow">// Hello! I'm</p>
+          <h1 class="hero-name">
+            <span class="name-first">Ahmed</span> <span class="name-last">Khalifa</span>
+          </h1>
+          <div class="hero-role" aria-live="polite">
+            <span class="typewriter-prefix" aria-hidden="true">$ </span><span id="typewriter"></span><span class="cursor-blink" aria-hidden="true">|</span>
+          </div>
+          <p class="hero-desc">Building scalable mobile apps and resilient cloud infrastructure — from Android to Kubernetes, Flutter to penetration testing.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Contact Me</a>
+            <a href="#projects" class="btn btn-ghost">View Projects</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/khalifa1299" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/ahmed-khalifa-06b0a6181/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:business@ahmedkhalifa.dev" class="social-icon" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
         </div>
-        <p class="hero-location">
-          <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a5 5 0 0 0-5 5c0 3.5 5 9 5 9s5-5.5 5-9a5 5 0 0 0-5-5zm0 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
-          Cairo, Egypt &nbsp;·&nbsp; <span class="status-dot" aria-hidden="true"></span>&nbsp;Open to remote
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+
+        <!-- Right: code card -->
+        <div class="hero-right" aria-hidden="true">
+          <div class="code-card glass-card">
+            <div class="code-card-titlebar">
+              <div class="code-card-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="code-filename">developer.js</span>
+            </div>
+            <pre class="code-body"><code><span class="c-comment">// Software Engineer</span>
+<span class="c-keyword">const</span> <span class="c-var">developer</span> <span class="c-op">=</span> {
+  <span class="c-prop">name</span>:      <span class="c-string">'Ahmed Khalifa'</span>,
+  <span class="c-prop">skills</span>:    [<span class="c-string">'Flutter'</span>, <span class="c-string">'Kotlin'</span>, <span class="c-string">'K8s'</span>],
+  <span class="c-prop">focuses</span>:   [<span class="c-string">'Mobile'</span>, <span class="c-string">'DevOps'</span>],
+  <span class="c-prop">certified</span>: [<span class="c-string">'CCNA'</span>, <span class="c-string">'eJPT'</span>],
+  <span class="c-prop">learning</span>:  <span class="c-string">'Always'</span>
+};</code></pre>
+          </div>
         </div>
+
       </div>
       <div class="scroll-indicator" aria-hidden="true">
         <span>scroll</span>
@@ -88,13 +117,46 @@
 
     <!-- ==================== ABOUT ==================== -->
     <section id="about" aria-labelledby="about-heading">
-      <div class="section-header reveal">
-        <span class="section-number" aria-hidden="true">01</span>
-        <h2 id="about-heading">about</h2>
-        <div class="section-line" aria-hidden="true"></div>
+
+      <!-- Editorial billboard -->
+      <div class="about-billboard">
+        <div class="about-watermark" aria-hidden="true">ENGINEER</div>
+
+        <div class="about-billboard-text reveal">
+          <p class="about-eyebrow">// 01 — about me</p>
+          <h2 id="about-heading" class="about-display">
+            <span class="abt-im">WHO I AM</span>
+            <span class="abt-name-1">SOFTWARE</span>
+            <span class="abt-name-2">ENGINEER.</span>
+          </h2>
+          <p class="about-tagline">
+            Software Engineer &nbsp;·&nbsp; Cairo, Egypt &nbsp;·&nbsp;
+            <span class="status-dot" aria-hidden="true"></span>&nbsp;Open to remote
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number" data-target="5">0</span>
+              <span class="stat-label">yrs experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="10">0</span>
+              <span class="stat-label">projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="4">0</span>
+              <span class="stat-label">certifications</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-billboard-photo" aria-hidden="true">
+          <img src="assets/profile.png" alt="">
+        </div>
       </div>
-      <div class="about-grid">
-        <div class="terminal-window glass-card reveal" data-reveal-delay="100">
+
+      <!-- Terminal + bio -->
+      <div class="about-content-row">
+        <div class="terminal-window glass-card reveal" data-reveal-delay="0">
           <div class="terminal-titlebar" aria-hidden="true">
             <span class="dot dot-red"></span>
             <span class="dot dot-yellow"></span>
@@ -103,25 +165,12 @@
           </div>
           <div class="terminal-body" id="terminal-body" role="log" aria-live="polite"></div>
         </div>
-        <div class="about-text reveal" data-reveal-delay="200">
+        <div class="about-text reveal" data-reveal-delay="100">
           <p>Software engineer with deep roots in mobile development and a serious DevOps practice. I build production systems — Flutter apps with complex architectures, Kubernetes clusters that don't page you at 3am, CI/CD pipelines that ship code instead of anxiety.</p>
           <p>I hold a CCNA and an eJPT, which means I understand the network beneath your container and the threat model around it. I'm not a specialist who forgot everything outside their lane.</p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-number">5+</span>
-              <span class="stat-label">years experience</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">10+</span>
-              <span class="stat-label">production projects</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">3</span>
-              <span class="stat-label">certifications</span>
-            </div>
-          </div>
         </div>
       </div>
+
     </section>
 
     <!-- ==================== SKILLS ==================== -->

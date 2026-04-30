@@ -1,9 +1,220 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Khalifa</title>
-  </head>
-  <body>
-    <h1>Hello, I'm Khalifa 🚀</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ahmed Khalifa — Software Engineer. Mobile, DevOps, Networking & Security.">
+  <meta property="og:title" content="Ahmed Khalifa | Software Engineer">
+  <meta property="og:description" content="Software Engineer specializing in Android, Flutter, Kubernetes, and DevOps. CCNA & eJPT certified.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ahmedkhalifa.dev">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Ahmed Khalifa — Software Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom cursor (hidden on touch) -->
+  <div id="cursor-ring" aria-hidden="true"></div>
+  <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Konami overlay -->
+  <div id="konami-overlay" role="dialog" aria-modal="true" aria-label="Root access granted" aria-hidden="true">
+    <canvas id="matrix-canvas"></canvas>
+    <div id="konami-message">
+      <span class="konami-brackets">[</span>&nbsp;ROOT ACCESS GRANTED&nbsp;<span class="konami-brackets">]</span>
+    </div>
+    <button id="konami-close" aria-label="Close overlay">press ESC to exit</button>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo" aria-label="Ahmed Khalifa — home">
+      <svg class="logo-hex" width="36" height="36" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon points="80,6 146,43 146,117 80,154 14,117 14,43" fill="none" stroke="#5fa8f5" stroke-width="3" opacity="0.75"/>
+        <polygon points="80,20 132,50 132,110 80,140 28,110 28,50" fill="#030f1f" stroke="#1a4a7a" stroke-width="1.5"/>
+        <line x1="80" y1="20" x2="80" y2="50" stroke="#1a4a7a" stroke-width="1" opacity="0.6"/>
+        <line x1="80" y1="110" x2="80" y2="140" stroke="#1a4a7a" stroke-width="1" opacity="0.6"/>
+        <text x="74" y="80" text-anchor="middle" dominant-baseline="central" font-family="Cinzel, serif" font-weight="900" font-size="44" fill="#5fa8f5">A</text>
+        <text x="106" y="80" text-anchor="middle" dominant-baseline="central" font-family="Cinzel, serif" font-weight="900" font-size="44" fill="#ffffff">K</text>
+      </svg>
+      <span class="blink" aria-hidden="true">_</span>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#about">about</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#certifications">certs</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="hero" aria-label="Introduction">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-content">
+        <p class="hero-eyebrow">// available for opportunities</p>
+        <h1 class="hero-name" data-text="Ahmed Khalifa">Ahmed Khalifa</h1>
+        <div class="hero-role" aria-live="polite">
+          <span class="typewriter-prefix" aria-hidden="true">$ whoami &nbsp;&#8594;&nbsp; </span><span id="typewriter"></span><span class="cursor-blink" aria-hidden="true">|</span>
+        </div>
+        <p class="hero-location">
+          <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a5 5 0 0 0-5 5c0 3.5 5 9 5 9s5-5.5 5-9a5 5 0 0 0-5-5zm0 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+          Cairo, Egypt &nbsp;·&nbsp; <span class="status-dot" aria-hidden="true"></span>&nbsp;Open to remote
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="section-header reveal">
+        <span class="section-number" aria-hidden="true">01</span>
+        <h2 id="about-heading">about</h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+      <div class="about-grid">
+        <div class="terminal-window glass-card reveal" data-reveal-delay="100">
+          <div class="terminal-titlebar" aria-hidden="true">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="terminal-title">ahmed@ahmedkhalifa.dev: ~</span>
+          </div>
+          <div class="terminal-body" id="terminal-body" role="log" aria-live="polite"></div>
+        </div>
+        <div class="about-text reveal" data-reveal-delay="200">
+          <p>Software engineer with deep roots in mobile development and a serious DevOps practice. I build production systems — Flutter apps with complex architectures, Kubernetes clusters that don't page you at 3am, CI/CD pipelines that ship code instead of anxiety.</p>
+          <p>I hold a CCNA and an eJPT, which means I understand the network beneath your container and the threat model around it. I'm not a specialist who forgot everything outside their lane.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">years experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">production projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">3</span>
+              <span class="stat-label">certifications</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="section-header reveal">
+        <span class="section-number" aria-hidden="true">02</span>
+        <h2 id="skills-heading">skills</h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-domain glass-card reveal" data-domain="mobile" data-reveal-delay="0">
+          <h3><span class="domain-icon" aria-hidden="true">◈</span> Mobile Development</h3>
+          <div class="skill-tags" id="skills-mobile" role="list"></div>
+        </div>
+        <div class="skill-domain glass-card reveal" data-domain="devops" data-reveal-delay="100">
+          <h3><span class="domain-icon" aria-hidden="true">⬡</span> DevOps &amp; Cloud</h3>
+          <div class="skill-tags" id="skills-devops" role="list"></div>
+        </div>
+        <div class="skill-domain glass-card reveal" data-domain="security" data-reveal-delay="200">
+          <h3><span class="domain-icon" aria-hidden="true">◎</span> Networking &amp; Security</h3>
+          <div class="skill-tags" id="skills-security" role="list"></div>
+        </div>
+        <div class="skill-domain glass-card reveal" data-domain="cs" data-reveal-delay="300">
+          <h3><span class="domain-icon" aria-hidden="true">⌬</span> Core CS</h3>
+          <div class="skill-tags" id="skills-cs" role="list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="section-header reveal">
+        <span class="section-number" aria-hidden="true">03</span>
+        <h2 id="projects-heading">projects</h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+      <p class="projects-hint reveal" aria-hidden="true">// hover cards to reveal details</p>
+      <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS ==================== -->
+    <section id="certifications" aria-labelledby="certs-heading">
+      <div class="section-header reveal">
+        <span class="section-number" aria-hidden="true">04</span>
+        <h2 id="certs-heading">certifications</h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+      <div class="certs-grid" id="certs-grid"></div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="section-header reveal">
+        <span class="section-number" aria-hidden="true">05</span>
+        <h2 id="contact-heading">contact</h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+      <div class="contact-terminal glass-card reveal" data-reveal-delay="100">
+        <div class="terminal-titlebar" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-title">contact@ahmedkhalifa.dev: ~</span>
+        </div>
+        <div class="contact-links">
+          <a href="https://github.com/khalifa1299" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <span class="cmd-prompt" aria-hidden="true">$</span>
+            <span class="cmd-text">open --url github.com/khalifa1299</span>
+            <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ahmed-khalifa-06b0a6181/" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <span class="cmd-prompt" aria-hidden="true">$</span>
+            <span class="cmd-text">open --url linkedin.com/in/ahmed-khalifa</span>
+            <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="mailto:business@ahmedkhalifa.dev" class="contact-link">
+            <span class="cmd-prompt" aria-hidden="true">$</span>
+            <span class="cmd-text">sendmail business@ahmedkhalifa.dev</span>
+            <svg class="link-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+        <p class="contact-footer">// I read every message. Response time: &lt; 24h<span class="blink" aria-hidden="true">_</span></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <!-- Try the Konami code: ↑↑↓↓←→←→BA -->
+    <p class="footer-text">Built with HTML, CSS &amp; JavaScript. No frameworks were harmed.</p>
+    <p class="footer-copy">&#169; <span id="footer-year"></span> Ahmed Khalifa</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
 </html>

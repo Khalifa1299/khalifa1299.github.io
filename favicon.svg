@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <polygon points="50,4 91,27 91,73 50,96 9,73 9,27"
+    fill="none" stroke="#5fa8f5" stroke-width="2.5" opacity="0.85"/>
+  <polygon points="50,13 82,31.5 82,68.5 50,87 18,68.5 18,31.5"
+    fill="#030f1f" stroke="#1a4a7a" stroke-width="1.2"/>
+  <text x="34" y="50" text-anchor="middle" dominant-baseline="central"
+    font-family="Georgia, serif" font-weight="900" font-size="30"
+    fill="#5fa8f5">A</text>
+  <text x="66" y="50" text-anchor="middle" dominant-baseline="central"
+    font-family="Georgia, serif" font-weight="900" font-size="30"
+    fill="#ffffff">K</text>
+</svg>

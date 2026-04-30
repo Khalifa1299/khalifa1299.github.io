@@ -114,28 +114,28 @@ const CERTS_DATA = [
     icon: '🛡',
     name: 'CCNA',
     issuer: 'Cisco Systems',
-    year: '2023',
+    year: '2024',
   },
   {
     cls: 'ejpt',
     icon: '⚔',
     name: 'eJPT',
     issuer: 'eLearnSecurity',
-    year: '2023',
+    year: '2025',
   },
   {
     cls: 'android',
     icon: '◈',
     name: 'Android Dev',
     issuer: 'Google',
-    year: '2022',
+    year: '2020',
   },
   {
     cls: 'sysdesign',
     icon: '⬡',
     name: 'Sys. Design',
     issuer: 'Software Architecture',
-    year: '2024',
+    year: '2022',
   },
 ];
 

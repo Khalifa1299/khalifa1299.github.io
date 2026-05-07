@@ -207,7 +207,7 @@
         <h2 id="projects-heading">projects</h2>
         <div class="section-line" aria-hidden="true"></div>
       </div>
-      <p class="projects-hint reveal" aria-hidden="true">// hover cards to reveal details</p>
+      <p class="projects-hint reveal" aria-hidden="true">// click any card to explore architecture &amp; stack</p>
       <div class="projects-grid" id="projects-grid"></div>
     </section>
 
@@ -257,6 +257,17 @@
     </section>
 
   </main>
+
+  <!-- ==================== PROJECT MODAL ==================== -->
+  <div id="project-modal" role="dialog" aria-modal="true" aria-label="Project details" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button class="modal-close" aria-label="Close project details">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
 
   <footer role="contentinfo">
     <!-- Try the Konami code: ↑↑↓↓←→←→BA -->

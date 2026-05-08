@@ -8,16 +8,19 @@
   <meta property="og:description" content="Software Engineer specializing in Android, Flutter, Kubernetes, and DevOps. CCNA & eJPT certified.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ahmedkhalifa.dev">
-  <meta name="theme-color" content="#0a0a0f">
+  <meta name="theme-color" content="#EFE3CA">
   <title>Ahmed Khalifa — Software Engineer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
 
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+  </script>
 </head>
 <body>
 
@@ -46,11 +49,17 @@
       <li><a href="#certifications">certs</a></li>
       <li><a href="#contact">contact</a></li>
     </ul>
-    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
   <main>
@@ -66,9 +75,9 @@
             <span class="name-first">Ahmed</span> <span class="name-last">Khalifa</span>
           </h1>
           <div class="hero-role" aria-live="polite">
-            <span class="typewriter-prefix" aria-hidden="true">$ </span><span id="typewriter"></span><span class="cursor-blink" aria-hidden="true">|</span>
+            <span class="typewriter-prefix" aria-hidden="true">$  </span><span id="typewriter"></span><span class="cursor-blink" aria-hidden="true">|</span>
           </div>
-          <p class="hero-desc">Building scalable mobile apps and resilient cloud infrastructure — from Android to Kubernetes, Flutter to penetration testing.</p>
+          <p class="hero-desc">Building scalable systems with resilient cloud infrastructure — from Android to Kubernetes, Flutter to penetration testing, Django to AWS.</p>
           <div class="hero-cta">
             <a href="#contact" class="btn btn-primary">Contact Me</a>
             <a href="#projects" class="btn btn-ghost">View Projects</a>
@@ -100,8 +109,8 @@
             <pre class="code-body"><code><span class="c-comment">// Software Engineer</span>
 <span class="c-keyword">const</span> <span class="c-var">developer</span> <span class="c-op">=</span> {
   <span class="c-prop">name</span>:      <span class="c-string">'Ahmed Khalifa'</span>,
-  <span class="c-prop">skills</span>:    [<span class="c-string">'Flutter'</span>, <span class="c-string">'Kotlin'</span>, <span class="c-string">'K8s'</span>],
-  <span class="c-prop">focuses</span>:   [<span class="c-string">'Mobile'</span>, <span class="c-string">'DevOps'</span>],
+  <span class="c-prop">skills</span>:    [<span class="c-string">'Flutter'</span>, <span class="c-string">'Django'</span>, <span class="c-string">'AWS'</span>, <span class="c-string">'Kubernetes'</span>, <span class="c-string">'Networking'</span>, <span class="c-string">'Security'</span>],
+  <span class="c-prop">focuses</span>:   [<span class="c-string">'Mobile Development'</span>, <span class="c-string">'DevOps'</span>, <span class="c-string">'Cloud Architecture'</span>, <span class="c-string">'Penetration Testing'</span>, <span class="c-string">'System Design'</span>],
   <span class="c-prop">certified</span>: [<span class="c-string">'CCNA'</span>, <span class="c-string">'eJPT'</span>],
   <span class="c-prop">learning</span>:  <span class="c-string">'Always'</span>
 };</code></pre>
@@ -207,7 +216,7 @@
         <h2 id="projects-heading">projects</h2>
         <div class="section-line" aria-hidden="true"></div>
       </div>
-      <p class="projects-hint reveal" aria-hidden="true">// click any card to explore architecture &amp; stack</p>
+      <p class="projects-hint reveal" aria-hidden="true">// click "Explore Architecture" to view system design, features &amp; stack</p>
       <div class="projects-grid" id="projects-grid"></div>
     </section>
 
